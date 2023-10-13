@@ -6,22 +6,22 @@ public class Main {
 		
 
 		Scanner sc = new Scanner(System.in);
-		
-		int n = sc.nextInt();
-		
-		double max = 0;
-		double sum = 0;
-		
-		for(int i = 0; i < n; i++) {
-			int score = sc.nextInt();
-			sum += score;
-			if(max < score) {
-				max = score;
-			}
+		int N = sc.nextInt();
+		int A[] = new int[N];
+		for(int i = 0 ; i < N; i++) {
+			A[i] = sc.nextInt();
 		}
-		double result = sum * 100 / max / n;
-		System.out.println(result);
-		
-		sc.close();
-	}
+		double sum = 0;
+		double max = 0;
+		for(int i = 0; i < N; i++) {
+			if(A[i] > max) {
+				max = A[i];
+			}
+			sum = sum +A[i];
+		}
+
+		System.out.println(sum * 100 / max / N);
+        
+        sc.close();
+    }
 }
